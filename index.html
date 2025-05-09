@@ -17,13 +17,62 @@
     <header>
         <nav class="navbar navbar-expand-lg bg-body-tertiary">
             <div class="container">
-                <a class="navbar-brand" href="index.html"><i class="bi-lightbulb-fill me-2 text-warning"></i>Generaciones 👨‍👩‍👧‍👦</a>
+                <a class="navbar-brand" href="index.html">Generaciones 👨‍👩‍👧‍👦</a>
             </div>
         </nav>
     </header>
-    <main class="container">
+    <main class="container my-3">
+        <form class="row g-3">
+            <!-- Nombre y Apellido -->
+            <div class="col-12">
+                <div class="input-group">
+                    <label class="input-group-text" for="nombreyApellido">Nombre y Apellido *</label>
+                    <input type="text" id="nombreyApellido" class="form-control" placeholder="Juan Perez"
+                        aria-label="Nombre y Apellido">
+                </div>
+            </div>
 
+            <!-- Fecha de nacimiento y Edad -->
+            <div class="col-12 col-md-6">
+                <div class="input-group">
+                    <label class="input-group-text" for="fechaNac">Fecha de Nacimiento *</label>
+                    <input type="date" id="fechaNac" class="form-control" aria-label="Fecha de Nacimiento">
+                </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-3">
+                <div class="input-group">
+                    <label class="input-group-text" for="edad">Edad *</label>
+                    <input type="number" id="edad" class="form-control" placeholder="20" aria-label="Edad">
+                </div>
+            </div>
+
+            <!-- Sexo, Peso y Altura -->
+            <div class="col-12 col-md-4 col-lg-2">
+                <div class="input-group">
+                    <label class="input-group-text" for="sexo">Sexo *</label>
+                    <input type="text" id="sexo" class="form-control" placeholder="F" aria-label="Sexo">
+                </div>
+            </div>
+            <div class="col-12 col-md-4 col-lg-2">
+                <div class="input-group">
+                    <label class="input-group-text" for="peso">Peso (Kg) *</label>
+                    <input type="number" id="peso" class="form-control" placeholder="55" aria-label="Peso">
+                </div>
+            </div>
+            <div class="col-12 col-md-4 col-lg-2">
+                <div class="input-group">
+                    <label class="input-group-text" for="altura">Altura (cm) *</label>
+                    <input type="number" id="altura" class="form-control" placeholder="160" aria-label="Altura">
+                </div>
+            </div>
+
+            <!-- Botón Enviar -->
+            <div class="col-12">
+                <button type="submit" class="btn btn-primary px-4 py-2">Enviar</button>
+            </div>
+        </form>
     </main>
+
     <footer class="bg-dark-subtle py-2 text-center">
         <p>&copy;Todos los derechos reservados</p>
         <p>Valentina Iramain 2025</p>
