@@ -21,56 +21,66 @@
             </div>
         </nav>
     </header>
-    <main class="container my-3">
-        <form class="row g-3">
-            <!-- Nombre y Apellido -->
-            <div class="col-12">
-                <div class="input-group">
-                    <label class="input-group-text" for="nombreyApellido">Nombre y Apellido *</label>
-                    <input type="text" id="nombreyApellido" class="form-control" placeholder="Juan Perez"
-                        aria-label="Nombre y Apellido">
-                </div>
-            </div>
+    <main>
+        <section class="text-center py-3 bg-warning text-secondary">
+            <h2>Datos Personales</h2>
+        </section>
 
-            <!-- Fecha de nacimiento y Edad -->
-            <div class="col-12 col-md-6">
-                <div class="input-group">
-                    <label class="input-group-text" for="fechaNac">Fecha de Nacimiento *</label>
-                    <input type="date" id="fechaNac" class="form-control" aria-label="Fecha de Nacimiento">
+        <section class="container my-3 px-3 bg-warning-subtle">
+            <form class="row pt-2">
+                <!-- Nombre -->
+                <div class="col-12 mb-2">
+                    <label for="nombre" class="form-label">Nombre completo</label>
+                    <input type="text" class="form-control" id="nombre" placeholder="Ej: Juan Pérez">
                 </div>
-            </div>
-            <div class="col-12 col-md-6 col-lg-3">
-                <div class="input-group">
-                    <label class="input-group-text" for="edad">Edad *</label>
-                    <input type="number" id="edad" class="form-control" placeholder="20" aria-label="Edad">
-                </div>
-            </div>
 
-            <!-- Sexo, Peso y Altura -->
-            <div class="col-12 col-md-4 col-lg-2">
-                <div class="input-group">
-                    <label class="input-group-text" for="sexo">Sexo *</label>
-                    <input type="text" id="sexo" class="form-control" placeholder="F" aria-label="Sexo">
+                <!-- Edad -->
+                <div class="col-6 col-sm-6 col-md-4 col-lg-3 mb-2">
+                    <label for="edad" class="form-label">Edad</label>
+                    <input type="number" class="form-control" id="edad" placeholder="Ej: 25">
                 </div>
-            </div>
-            <div class="col-12 col-md-4 col-lg-2">
-                <div class="input-group">
-                    <label class="input-group-text" for="peso">Peso (Kg) *</label>
-                    <input type="number" id="peso" class="form-control" placeholder="55" aria-label="Peso">
-                </div>
-            </div>
-            <div class="col-12 col-md-4 col-lg-2">
-                <div class="input-group">
-                    <label class="input-group-text" for="altura">Altura (cm) *</label>
-                    <input type="number" id="altura" class="form-control" placeholder="160" aria-label="Altura">
-                </div>
-            </div>
 
-            <!-- Botón Enviar -->
-            <div class="col-12">
-                <button type="submit" class="btn btn-primary px-4 py-2">Enviar</button>
-            </div>
-        </form>
+                <!-- Año de nacimiento -->
+                <div class="col-6 col-sm-6 col-md-4 col-lg-3 mb-2">
+                    <label for="anioNacimiento" class="form-label">Año de nacimiento</label>
+                    <input type="date" class="form-control" id="anioNacimiento">
+                </div>
+
+                <!-- DNI -->
+                <div class="col-6 col-sm-6 col-md-4 col-lg-3 mb-2">
+                    <label for="dni" class="form-label">DNI</label>
+                    <input type="number" class="form-control" id="dni" placeholder="Ej: 12345678">
+                </div>
+
+                <!-- Sexo -->
+                <div class="col-6 col-sm-6 col-md-4 col-lg-3 mb-2">
+                    <label for="sexo" class="form-label">Sexo (H o M)</label>
+                    <!-- <input type="text" class="form-control" id="sexo" placeholder="H o M" maxlength="1"> -->
+                    <select class="form-select" id="sexo" aria-label="sexo">
+                        <option selected>Seleccione Sexo</option>
+                        <option value="1">H (Hombre)</option>
+                        <option value="2">M (Mujer)</option>
+                    </select>
+                </div>
+
+                <!-- Peso -->
+                <div class="col-6 col-sm-6 col-md-4 col-lg-3 mb-2">
+                    <label for="peso" class="form-label">Peso (Kg)</label>
+                    <input type="number" class="form-control" id="peso" placeholder="Ej: 70">
+                </div>
+
+                <!-- Altura -->
+                <div class="col-6 col-sm-6 col-md-4 col-lg-3 mb-2">
+                    <label for="altura" class="form-label">Altura (cm)</label>
+                    <input type="number" class="form-control" id="altura" placeholder="Ej: 170">
+                </div>
+
+                <!-- Botón enviar -->
+                <div class="col-12 text-center my-3">
+                    <button type="submit" class="btn btn-warning text-secondary px-4">Enviar</button>
+                </div>
+            </form>
+        </section>
     </main>
 
     <footer class="bg-dark-subtle py-2 text-center">
