@@ -15,9 +15,30 @@
 
 <body>
     <header>
-        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <nav class="navbar navbar-expand-lg bg-body-tertiary px-5 mb-3 sticky-top">
             <div class="container">
                 <a class="navbar-brand" href="index.html">Generaciones 👨‍👩‍👧‍👦</a>
+            </div>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupprtedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="index.html">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Nueva Persona</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Mostrar Generación</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Mayor de Edad</a>
+                    </li>
+                </ul>
             </div>
         </nav>
     </header>
@@ -76,10 +97,25 @@
                 </div>
 
                 <!-- Botón enviar -->
-                <div class="col-12 text-center my-3">
+                <div class="col-12 my-3">
                     <button type="submit" class="btn btn-warning text-secondary px-4">Enviar</button>
                 </div>
             </form>
+        </section>
+
+
+        <section class="container d-inline-flex gap-3 justify-content-center my-3">
+            <button type="button" class="btn btn-secondary">Mostrar Generación</button>
+            <button type="button" class="btn btn-secondary">Mayor de Edad</button>
+        </section>
+
+        <section class="container mb-3">
+            <div class="alert alert-primary" role="alert">
+                A simple primary alert—check it out!
+            </div>
+            <div class="alert alert-success" role="alert">
+                A simple light alert—check it out!
+            </div>
         </section>
     </main>
 
