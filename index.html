@@ -16,7 +16,8 @@
 <body>
     <header>
         <nav class="navbar navbar-expand-lg bg-body-tertiary px-5 mb-3 sticky-top">
-            <div class="container">
+            <!-- <nav class="navbar navbar-expand-md bg-body-tertiary px-5 mb-3 sticky-top"> -->
+            <div class="container d-flex justify-content-between align-items-center">
                 <a class="navbar-brand" href="index.html">Generaciones 👨‍👩‍👧‍👦</a>
             </div>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -51,49 +52,49 @@
             <form class="row pt-2">
                 <!-- Nombre -->
                 <div class="col-12 mb-2">
-                    <label for="nombre" class="form-label">Nombre completo</label>
-                    <input type="text" class="form-control" id="nombre" placeholder="Ej: Juan Pérez">
+                    <label for="nombre" class="form-label">Nombre completo *</label>
+                    <input type="text" class="form-control" id="nombre" minlength="5" maxlength="60" placeholder="Ej: Juan Pérez" required>
                 </div>
 
                 <!-- Edad -->
                 <div class="col-6 col-sm-6 col-md-4 col-lg-3 mb-2">
-                    <label for="edad" class="form-label">Edad</label>
-                    <input type="number" class="form-control" id="edad" placeholder="Ej: 25">
+                    <label for="edad" class="form-label">Edad *</label>
+                    <input type="number" class="form-control" id="edad" placeholder="Ej: 25" min="0" max="120" required>
                 </div>
 
                 <!-- Año de nacimiento -->
                 <div class="col-6 col-sm-6 col-md-4 col-lg-3 mb-2">
-                    <label for="anioNacimiento" class="form-label">Año de nacimiento</label>
-                    <input type="date" class="form-control" id="anioNacimiento">
+                    <label for="anioNacimiento" class="form-label">Año de nacimiento *</label>
+                    <input type="number" class="form-control" id="anioNacimiento" placeholder="Ej: 1985" min="1900" max="2025" required>
                 </div>
 
                 <!-- DNI -->
                 <div class="col-6 col-sm-6 col-md-4 col-lg-3 mb-2">
-                    <label for="dni" class="form-label">DNI</label>
-                    <input type="number" class="form-control" id="dni" placeholder="Ej: 12345678">
+                    <label for="dni" class="form-label">DNI *</label>
+                    <input type="number" class="form-control" id="dni" placeholder="Ej: 12345678" min="1000000" max="99999999" required>
                 </div>
 
                 <!-- Sexo -->
                 <div class="col-6 col-sm-6 col-md-4 col-lg-3 mb-2">
-                    <label for="sexo" class="form-label">Sexo (H o M)</label>
+                    <label for="sexo" class="form-label">Sexo (H o M) *</label>
                     <!-- <input type="text" class="form-control" id="sexo" placeholder="H o M" maxlength="1"> -->
-                    <select class="form-select" id="sexo" aria-label="sexo">
-                        <option selected>Seleccione Sexo</option>
-                        <option value="1">H (Hombre)</option>
-                        <option value="2">M (Mujer)</option>
+                    <select class="form-select" id="sexo" aria-label="sexo" required>
+                        <option value="" selected disabled>Seleccione Sexo</option>
+                        <option value="H">H (Hombre)</option>
+                        <option value="M">M (Mujer)</option>
                     </select>
                 </div>
 
                 <!-- Peso -->
                 <div class="col-6 col-sm-6 col-md-4 col-lg-3 mb-2">
-                    <label for="peso" class="form-label">Peso (Kg)</label>
-                    <input type="number" class="form-control" id="peso" placeholder="Ej: 70">
+                    <label for="peso" class="form-label">Peso (Kg) *</label>
+                    <input type="number" class="form-control" id="peso" placeholder="Ej: 70" min="30" max="250" step="0.1" required>
                 </div>
 
                 <!-- Altura -->
                 <div class="col-6 col-sm-6 col-md-4 col-lg-3 mb-2">
-                    <label for="altura" class="form-label">Altura (cm)</label>
-                    <input type="number" class="form-control" id="altura" placeholder="Ej: 170">
+                    <label for="altura" class="form-label">Altura (cm) *</label>
+                    <input type="number" class="form-control" id="altura" placeholder="Ej: 170"  min="50" max="250" step="1" required>
                 </div>
 
                 <!-- Botón enviar -->
