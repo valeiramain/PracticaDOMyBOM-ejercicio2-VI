@@ -66,12 +66,13 @@ class Persona {
 
     //metodos
     mostrarGeneracion() {
-
         const anio = persona.getAnioNac
         rasgoCaracteristico = '';
         generacion = '';
+        let textoAlertGeneracion = document.getElementById('alertGeneracion')
 
         if (anio >= 1994 && anio <= 2010) {
+
             rasgoCaracteristico = 'Irreverencia';
             generacion = 'Z'
         } else if (anio >= 1981 && anio <= 1993) {
@@ -91,34 +92,29 @@ class Persona {
             generacion = 'Desconocida'
         }
 
-        console.log('rasco: '+rasgoCaracteristico)
-        console.log('genercion: '+generacion)
-        return (rasgoCaracteristico, generacion)
+        textoAlertGeneracion.classList.remove('d-none')
+        textoAlertGeneracion.textContent = `Rasgo Característico: ${rasgoCaracteristico} - Generación: ${generacion}`
+        return
     }
 
 
     esMayorDeEdad() {
+        let textoAlertMayor = document.getElementById('alertMayordeEdad')
+        textoAlertMayor.classList.remove('d-none')
+
         if (this.getEdad >= 18) {
-            console.log('es mayor de edad')
-            return (`<P>Es mayor de Edad</p>`)
+            textoAlertMayor.textContent = `La Persona es mayor de Edad`
         } else {
-            console.log('es menor de edad')
-            return (`<p>Es manor de Edad</p>`)
+            textoAlertMayor.textContent = `La Persona es mayor de Edad`
         }
+        return
     }
 
     mostrarDatos() {
         console.log('muestra datos')
-        // document.writeln(`<h3>Datos de la Persona:</h3>
-        //     <ul>
-        //     <li>Nombre: ${this.getNombre}</li>
-        //     <li>Edad: ${this.getEdad}</li>
-        //     <li>DNI: ${this.getDni}</li>
-        //     <li>Sexo: ${this.getSexo}</li>
-        //     <li>Peso: ${this.getPeso}</li>
-        //     <li>Altura: ${this.getAltura}</li>
-        //     <li>Año de Nacimiento: ${this.getAnioNac}</li>
-        //     </ul>`)
+        let textoMostrar = document.getElementById('alertMostrarDatos')
+        textoMostrar.classList.remove('d-none')
+        textoMostrar.textContent =`Nombre: ${this.getNombre} - Edad: ${this.getEdad} - DNI: ${this.getDni} - Sexo: ${this.getSexo} - Peso: ${this.getPeso} kg - Altura: ${this.getAltura} cm - Año de Nacimiento: ${this.getAnioNac}`
     }
 }
 
