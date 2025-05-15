@@ -65,70 +65,103 @@ class Persona {
     }
 
     //metodos
+    mostrarGeneracion() {
 
-    mostrarGeneracion(anioNac) {
-        let rasgoCaracteristico = ''
-        let generacion = ''
+        const anio = persona.getAnioNac
+        rasgoCaracteristico = '';
+        generacion = '';
 
-        if (anioNac >= 1994 && anioNac <= 2010) {
+        if (anio >= 1994 && anio <= 2010) {
             rasgoCaracteristico = 'Irreverencia';
             generacion = 'Z'
-        } else if (anioNac >= 1981 && anioNac <= 1993) {
+        } else if (anio >= 1981 && anio <= 1993) {
             rasgoCaracteristico = 'Frustración';
             generacion = 'Y'
-        } else if (anioNac >= 1969 && anioNac <= 1980) {
+        } else if (anio >= 1969 && anio <= 1980) {
             rasgoCaracteristico = 'Obsesión por el éxito'
             generacion = 'X'
-        } else if (anioNac >= 1949 && anioNac <= 1968) {
+        } else if (anio >= 1949 && anio <= 1968) {
             rasgoCaracteristico = 'Ambición';
             generacion = 'Baby Boom'
-        } else if (anioNac >= 1930 && anioNac <= 1948) {
+        } else if (anio >= 1930 && anio <= 1948) {
             rasgoCaracteristico = 'Austeridad';
             generacion = 'Silent Generation (los niños de la posguerra)'
         } else {
-            document.writeln("Ingresaste una opción inválida")
+            rasgoCaracteristico = 'Desconocido';
+            generacion = 'Desconocida'
         }
 
-        return document.writeln(`<p>Los nacidos en ${anioNac} tienen como rasgo característico: "${rasgoCaracteristico}" y pertenecen a la Generación: "${generacion}"</p>`)
+        console.log('rasco: '+rasgoCaracteristico)
+        console.log('genercion: '+generacion)
+        return (rasgoCaracteristico, generacion)
     }
 
-    esMayorDeEdad(edad){
-        if (edad>=18){
-            return document.writeln(`<p>La persona es mayor de Edad</p>`)
-        }else{
-            return document.writeln(`<p>La persona es menor de Edad</p>`)
 
+    esMayorDeEdad() {
+        if (this.getEdad >= 18) {
+            console.log('es mayor de edad')
+            return (`<P>Es mayor de Edad</p>`)
+        } else {
+            console.log('es menor de edad')
+            return (`<p>Es manor de Edad</p>`)
         }
     }
 
-    mostrarDatos(){
-        document.writeln(`<h3>Datos de la Persona:</h3>
-            <ul>
-            <li>Nombre: ${this.getNombre}</li>
-            <li>Edad: ${this.getEdad}</li>
-            <li>DNI: ${this.getDni}</li>
-            <li>Sexo: ${this.getSexo}</li>
-            <li>Peso: ${this.getPeso}</li>
-            <li>Altura: ${this.getAltura}</li>
-            <li>Año de Nacimiento: ${this.getAnioNac}</li>
-            </ul>`)
+    mostrarDatos() {
+        console.log('muestra datos')
+        // document.writeln(`<h3>Datos de la Persona:</h3>
+        //     <ul>
+        //     <li>Nombre: ${this.getNombre}</li>
+        //     <li>Edad: ${this.getEdad}</li>
+        //     <li>DNI: ${this.getDni}</li>
+        //     <li>Sexo: ${this.getSexo}</li>
+        //     <li>Peso: ${this.getPeso}</li>
+        //     <li>Altura: ${this.getAltura}</li>
+        //     <li>Año de Nacimiento: ${this.getAnioNac}</li>
+        //     </ul>`)
     }
-
-    generaDNI(){
-        const dniAleatorio = Math.floor(Math.random() * 100000000);
-        return document.writeln(`<p>El DNI generado aleatoriamente es: ${dniAleatorio}`)
-    }
-
-
 }
 
-// nuevo objeto
-const persona = new Persona('Valentina Iramain', 53, '22414369', 'F', '55 kg', 1.60, 1972);
-console.log(persona)
+// funciones
+function crearPersona(e) {
+    e.preventDefault();
+    console.log('desde funcion crearPersona')
+    const nombre = document.getElementById('formPersona').nombre.value
+    const edad = document.getElementById('formPersona').edad.value
+    const dni = document.getElementById('formPersona').dni.value
+    const sexo = document.getElementById('formPersona').sexo.value
+    const peso = document.getElementById('formPersona').peso.value
+    const altura = document.getElementById('formPersona').altura.value
+    const anioNac = document.getElementById('formPersona').anioNac.value
 
-persona.mostrarGeneracion(persona.getAnioNac)
-persona.esMayorDeEdad(persona.getEdad)
-persona.mostrarDatos()
-persona.generaDNI()
+    nuevaPersona = new Persona(nombre, edad, dni, sexo, peso, altura, anioNac)
+    console.log(nuevaPersona)
+}
 
 
+
+//--------------------------------------------------------------------------
+
+// nueva persona
+const persona = document.getElementById('formPersona')
+// const btnMostrarGeneracion = document.querySelector('#btnMostrarGeneracion')
+let rasgoCaracteristico = ''
+let generacion = ''
+let nuevaPersona = null
+
+// boton enviar del formulario
+persona.addEventListener('submit', crearPersona)
+
+console.log(nuevaPersona)
+
+document.getElementById('btnMostrarGeneracion').addEventListener('click', () => {
+    if (nuevaPersona) nuevaPersona.mostrarGeneracion();
+});
+
+document.getElementById('btnEsMayorDeEdad').addEventListener('click', () => {
+    if (nuevaPersona) nuevaPersona.esMayorDeEdad();
+});
+
+document.getElementById('btnMostrarDatos').addEventListener('click', () => {
+    if (nuevaPersona) nuevaPersona.mostrarDatos();
+});
