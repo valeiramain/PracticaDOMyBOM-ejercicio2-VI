@@ -66,7 +66,7 @@ class Persona {
 
     //metodos
     mostrarGeneracion() {
-        const anio = persona.getAnioNac
+        const anio = nuevaPersona.getAnioNac
         rasgoCaracteristico = '';
         generacion = '';
         let textoAlertGeneracion = document.getElementById('alertGeneracion')
@@ -114,21 +114,21 @@ class Persona {
         console.log('muestra datos')
         let textoMostrar = document.getElementById('alertMostrarDatos')
         textoMostrar.classList.remove('d-none')
-        textoMostrar.textContent =`Nombre: ${this.getNombre} - Edad: ${this.getEdad} - DNI: ${this.getDni} - Sexo: ${this.getSexo} - Peso: ${this.getPeso} kg - Altura: ${this.getAltura} cm - Año de Nacimiento: ${this.getAnioNac}`
+        textoMostrar.textContent = `Nombre: ${this.getNombre} - Edad: ${this.getEdad} - DNI: ${this.getDni} - Sexo: ${this.getSexo} - Peso: ${this.getPeso} kg - Altura: ${this.getAltura} cm - Año de Nacimiento: ${this.getAnioNac}`
     }
 }
 
 // funciones
 function crearPersona(e) {
     e.preventDefault();
-    console.log('desde funcion crearPersona')
-    const nombre = document.getElementById('formPersona').nombre.value
-    const edad = document.getElementById('formPersona').edad.value
-    const dni = document.getElementById('formPersona').dni.value
-    const sexo = document.getElementById('formPersona').sexo.value
-    const peso = document.getElementById('formPersona').peso.value
-    const altura = document.getElementById('formPersona').altura.value
-    const anioNac = document.getElementById('formPersona').anioNac.value
+    const nombre = document.getElementById('nombre').value
+    const edad = document.getElementById('edad').value
+    const dni = document.getElementById('dni').value
+    const sexo = document.getElementById('sexo').value
+    const peso = document.getElementById('peso').value
+    const altura = document.getElementById('altura').value
+    const anioNac = document.getElementById('anioNac').value
+
 
     nuevaPersona = new Persona(nombre, edad, dni, sexo, peso, altura, anioNac)
     console.log(nuevaPersona)
@@ -138,26 +138,33 @@ function crearPersona(e) {
 
 //--------------------------------------------------------------------------
 
-// nueva persona
+// nueva persona: toma datos del formulario para crearPersona
 const persona = document.getElementById('formPersona')
-// const btnMostrarGeneracion = document.querySelector('#btnMostrarGeneracion')
+
 let rasgoCaracteristico = ''
 let generacion = ''
-let nuevaPersona = null
 
+let nuevaPersona = null
 // boton enviar del formulario
 persona.addEventListener('submit', crearPersona)
-
 console.log(nuevaPersona)
 
+
+// eventos de botones
 document.getElementById('btnMostrarGeneracion').addEventListener('click', () => {
-    if (nuevaPersona) nuevaPersona.mostrarGeneracion();
+    if (nuevaPersona) {
+        nuevaPersona.mostrarGeneracion()
+    }
 });
 
 document.getElementById('btnEsMayorDeEdad').addEventListener('click', () => {
-    if (nuevaPersona) nuevaPersona.esMayorDeEdad();
+    if (nuevaPersona) {
+        nuevaPersona.esMayorDeEdad()
+    };
 });
 
 document.getElementById('btnMostrarDatos').addEventListener('click', () => {
-    if (nuevaPersona) nuevaPersona.mostrarDatos();
+    if (nuevaPersona) {
+        nuevaPersona.mostrarDatos();
+    }
 });
