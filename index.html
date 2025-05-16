@@ -15,15 +15,93 @@
 
 <body>
     <header>
-        <nav class="navbar navbar-expand-lg bg-body-tertiary">
-            <div class="container">
-                <a class="navbar-brand" href="index.html"><i class="bi-lightbulb-fill me-2 text-warning"></i>Generaciones 👨‍👩‍👧‍👦</a>
+        <nav class="navbar navbar-expand-lg bg-body-tertiary px-5 mb-3 sticky-top">
+            <div class="container d-flex justify-content-center">
+                <a class="navbar-brand" href="./index.html">Generaciones 👨‍👩‍👧‍👦</a>
+                <!-- <button type="button" class="btn btn-warning" onclick="nuevaPersona()">Nueva Persona</button> -->
             </div>
         </nav>
     </header>
-    <main class="container">
+    <main>
+        <section class="text-center py-3 bg-warning text-secondary">
+            <h2>Datos Personales</h2>
+        </section>
 
+        <section class="container my-3 px-3 bg-warning-subtle">
+            <form class="row pt-2" id="formPersona">
+                <!-- Nombre -->
+                <div class="col-12 mb-2">
+                    <label for="nombre" class="form-label">Nombre completo *</label>
+                    <input type="text" class="form-control" id="nombre" minlength="5" maxlength="60" placeholder="Ej: Juan Pérez" required>
+                </div>
+
+                <!-- Edad -->
+                <div class="col-6 col-sm-6 col-md-4 col-lg-3 mb-2">
+                    <label for="edad" class="form-label">Edad *</label>
+                    <input type="number" class="form-control" id="edad" placeholder="Ej: 25" min="0" max="120" required>
+                </div>
+
+                <!-- Año de nacimiento -->
+                <div class="col-6 col-sm-6 col-md-4 col-lg-3 mb-2">
+                    <label for="anioNac" class="form-label">Año de nacimiento *</label>
+                    <input type="number" class="form-control" id="anioNac" placeholder="Ej: 1985" min="1900" max="2025" required>
+                </div>
+
+                <!-- DNI -->
+                <div class="col-6 col-sm-6 col-md-4 col-lg-3 mb-2">
+                    <label for="dni" class="form-label">DNI *</label>
+                    <input type="number" class="form-control" id="dni" placeholder="Ej: 12345678" min="1000000" max="99999999" required>
+                </div>
+
+                <!-- Sexo -->
+                <div class="col-6 col-sm-6 col-md-4 col-lg-3 mb-2">
+                    <label for="sexo" class="form-label">Sexo (H o M) *</label>
+                    <select class="form-select" id="sexo" aria-label="sexo" required>
+                        <option value="" selected disabled>Seleccione Sexo</option>
+                        <option value="H">H (Hombre)</option>
+                        <option value="M">M (Mujer)</option>
+                    </select>
+                </div>
+
+                <!-- Peso -->
+                <div class="col-6 col-sm-6 col-md-4 col-lg-3 mb-2">
+                    <label for="peso" class="form-label">Peso (Kg) *</label>
+                    <input type="number" class="form-control" id="peso" placeholder="Ej: 70" min="30" max="250" step="0.1" required>
+                </div>
+
+                <!-- Altura -->
+                <div class="col-6 col-sm-6 col-md-4 col-lg-3 mb-2">
+                    <label for="altura" class="form-label">Altura (cm) *</label>
+                    <input type="number" class="form-control" id="altura" placeholder="Ej: 170"  min="50" max="250" step="1" required>
+                </div>
+
+                <!-- Botón enviar -->
+                <div class="col-12 my-3">
+                    <button type="submit" class="btn btn-warning text-secondary px-4">Enviar</button>
+                </div>
+            </form>
+        </section>
+
+
+        <section class="container d-flex gap-3 justify-content-center my-3">
+            <button type="button" class="btn btn-secondary" id="btnMostrarGeneracion">Mostrar Generación</button>
+            <button type="button" class="btn btn-secondary" id="btnEsMayorDeEdad">Mayor de Edad</button>
+            <button type="button" class="btn btn-secondary px-4" id="btnMostrarDatos">Mostrar Datos</button>
+        </section>
+
+        <section class="container mb-3">
+            <div class="alert alert-primary d-none" role="alert" id="alertGeneracion">
+                A simple primary alert—check it out!
+            </div>
+            <div class="alert alert-danger d-none" role="alert" id="alertMayordeEdad">
+                A simple light alert—check it out!
+            </div>
+            <div class="alert alert-success d-none" role="alert" id="alertMostrarDatos">
+                A simple light alert—check it out!
+            </div>
+        </section>
     </main>
+
     <footer class="bg-dark-subtle py-2 text-center">
         <p>&copy;Todos los derechos reservados</p>
         <p>Valentina Iramain 2025</p>
